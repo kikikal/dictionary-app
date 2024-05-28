@@ -4,11 +4,11 @@ import "./Audio.css";
 export default function Audio(props) {
   return (
     <span className="Audio">
-      {props.phoneticsAudios
-        .filter((audio) => audio.audio !== "")
-        .map(function (audio, index) {
+      {props.phoneticsAudios.map(function (audio, index) {
+        if (audio.audio) {
           return (
             <span key={index}>
+              <em>{audio.text}</em>
               <a
                 href={audio.audio}
                 className="material-symbols-outlined"
@@ -19,7 +19,14 @@ export default function Audio(props) {
               </a>
             </span>
           );
-        })}
+        } else {
+          return (
+            <span key={index}>
+              <em>{audio.text}</em>
+            </span>
+          );
+        }
+      })}
     </span>
   );
 }

@@ -11,7 +11,6 @@ export default function Definition(props) {
       <div className="Definition">
         <h2>{props.response.word}</h2>
         <h3>
-          <em>{props.response.phonetic}</em>
           <Audio phoneticsAudios={props.phoneticsAudios} />
         </h3>
         <br />

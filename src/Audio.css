@@ -1,11 +1,13 @@
-.Audio {
-  margin-left: 10px;
-}
-
 .Audio a {
   text-decoration: none;
   color: grey;
   font-size: 30px;
   position: relative;
-  top: 7px;
+  top: 8px;
+  margin-right: 5px;
+}
+
+.Audio em {
+  color: grey;
+  margin-left: 15px;
 }
