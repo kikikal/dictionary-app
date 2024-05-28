@@ -9,7 +9,7 @@ export default function Dictionary() {
 
   function searchForWord(response) {
     setSearchResponse(response.data);
-    console.log(response.data);
+    console.log(response);
   }
 
   function changeSearchValue(event) {
