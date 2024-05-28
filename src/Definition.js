@@ -6,13 +6,13 @@ import Antonyms from "./Antonyms";
 import Audio from "./Audio";
 
 export default function Definition(props) {
-  if (props.response) {
+  if (props.response && props.phoneticsAudios) {
     return (
       <div className="Definition">
         <h2>{props.response.word}</h2>
         <h3>
           <em>{props.response.phonetic}</em>
-          <Audio phoneticsAudio={props.audios} />
+          <Audio phoneticsAudios={props.phoneticsAudios} />
         </h3>
         <br />
         <div>

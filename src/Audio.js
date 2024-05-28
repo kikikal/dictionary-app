@@ -4,7 +4,8 @@ import "./Audio.css";
 export default function Audio(props) {
   return (
     <span className="Audio">
-      {props.audios
+      {props.phoneticsAudios
+        .filter((audio) => audio.audio !== "")
         .map(function (audio, index) {
           return (
             <span key={index}>
