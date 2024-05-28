@@ -1,5 +1,7 @@
 import React from "react";
 import "./Definition.css";
+import Synonyms from "./Synonyms";
+import Antonyms from "./Antonyms";
 
 export default function Definition(props) {
   if (props.response) {
@@ -21,6 +23,8 @@ export default function Definition(props) {
                   <p className="example">
                     ex. <em>{meaning.example}</em>
                   </p>{" "}
+                  <Synonyms synonyms={meaning.synonyms} />
+                  <Antonyms antonyms={meaning.antonyms} />
                 </div>
               );
             } else {
@@ -28,6 +32,8 @@ export default function Definition(props) {
                 <div className="definitions" key={index}>
                   <h4>{meaning.partOfSpeech}</h4>
                   <p>{meaning.definition}</p>
+                  <Synonyms synonyms={meaning.synonyms} />
+                  <Antonyms antonyms={meaning.antonyms} />
                 </div>
               );
             }
