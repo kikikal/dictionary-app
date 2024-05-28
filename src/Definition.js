@@ -3,6 +3,7 @@ import "./Definition.css";
 import Example from "./Example";
 import Synonyms from "./Synonyms";
 import Antonyms from "./Antonyms";
+import Audio from "./Audio";
 
 export default function Definition(props) {
   if (props.response) {
@@ -10,8 +11,8 @@ export default function Definition(props) {
       <div className="Definition">
         <h2>{props.response.word}</h2>
         <h3>
-          {" "}
-          <em>{props.response.phonetic}</em>
+          <em>{props.response.phonetic}</em>{" "}
+          <Audio audioLink={props.audioLink} />
         </h3>
         <br />
         <div>
@@ -26,6 +27,7 @@ export default function Definition(props) {
                 <Synonyms synonyms={meaning.synonyms} />
                 <br />
                 <Antonyms antonyms={meaning.antonyms} />
+                <br />
               </div>
             );
           })}
