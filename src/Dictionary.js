@@ -6,18 +6,18 @@ import "./Dictionary.css";
 export default function Dictionary() {
   const [searchResponse, setSearchResponse] = useState();
   const [searchValue, setSearchValue] = useState(null);
-  const [audioLink, setAudioLink] = useState(null);
+  const [audio, setAudio] = useState(null);
 
-  function getAudioLink(response) {
-    console.log(response);
-    setAudioLink(response.data[0].phonetics[0].audio);
+  function getAudio(response) {
+    console.log(response.data[0].phonetics);
+    setAudio(response.data[0].phonetics);
   }
 
   function searchForWord(response) {
     setSearchResponse(response.data);
     console.log(response);
     let audioUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${response.data.word}`;
-    axios.get(audioUrl).then(getAudioLink);
+    axios.get(audioUrl).then(getAudio);
   }
 
   function changeSearchValue(event) {
@@ -43,7 +43,7 @@ export default function Dictionary() {
           onChange={changeSearchValue}
         />
       </form>
-      <Definition response={searchResponse} audioLink={audioLink} />
+      <Definition response={searchResponse} phoneticsAudios={audio} />
     </div>
   );
 }
