@@ -1,11 +1,13 @@
 .Synonyms {
-  line-height: 30px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .Synonyms .synonym {
   border: solid 1px lavender;
   background: lavender;
   margin-left: 8px;
-  padding: 2px 7px;
+  padding: 0px 7px;
   border-radius: 8px;
+  margin-bottom: 5px;
 }
