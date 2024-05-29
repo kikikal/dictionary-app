@@ -11,3 +11,8 @@
 .App footer {
   text-align: center;
 }
+
+.App a {
+  text-decoration: none;
+  color: rgb(172, 172, 214);
+}
