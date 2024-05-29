@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Definition from "./Definition";
-import Photos from "./Photos";
 import axios from "axios";
 import "./Dictionary.css";
 
@@ -15,7 +14,6 @@ export default function Dictionary() {
   }
 
   function getPhotos(response) {
-    console.log(response);
     setPhotos(response.data.photos);
   }
 
@@ -53,8 +51,11 @@ export default function Dictionary() {
           onChange={changeSearchValue}
         />
       </form>
-      <Definition response={searchResponse} phoneticsAudios={audio} />
-      <Photos photos={photos} />
+      <Definition
+        response={searchResponse}
+        phoneticsAudios={audio}
+        photos={photos}
+      />
     </div>
   );
 }
